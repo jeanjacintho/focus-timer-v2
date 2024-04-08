@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <title>FocusTimer - Pomodoro</title>
+
+    <link rel="stylesheet" href="./src/app.css">
+    <script src="./src/app.js" type="module" defer></script>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="timer-screen">
+            <button id="toggle-mode">
+                <span class="sr-only">Ativar/Desativar Light Mode</span>
+                <i class="ph-bold ph-sun"></i>
+                <i class="ph-bold ph-moon"></i>
+            </button>
+
+            <section id="timer" class="flex">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+
+            <section id="controls" class="flex">
+                <button data-action="toggleRunning" class="ph ph-play-circle"><span class="sr-only">Iniciar contador</span></button>
+                <button data-action="toggleRunning" class="ph ph-pause-circle"><span class="sr-only">Pausar contador</span></button>
+                <button data-action="reset" class="ph ph-stop-circle secondary"><span class="sr-only">Parar contador</span></button>
+                <button data-action="addMinutes" class="ph ph-plus-circle secondary"><span class="sr-only">Adicionar 5 minutos</span></button>
+                <button data-action="removeMinutes" class="ph ph-minus-circle secondary"><span class="sr-only">Remover 5 minutos</span></button>
+                <button data-action="toggleMusic" class="ph ph-speaker-x secondary"><span class="sr-only">Iniciar música</span></button>
+                <button data-action="toggleMusic" class="ph ph-speaker-high"><span class="sr-only">Parar música</span></button>
+            </section>
+        </div>
+        <div id="musics">
+            <button id="forest" data-action="forest" class="ph ph-tree secondary selected"><span class="sr-only">Iniciar contador</span></button>
+            <button id="rain" data-action="rain" class="ph ph-cloud-rain secondary"><span class="sr-only">Iniciar contador</span></button>
+            <button id="store" data-action="store" class="ph ph-storefront secondary"><span class="sr-only">Iniciar contador</span></button>
+            <button id="fire" data-action="fire" class="ph ph-fire secondary"><span class="sr-only">Iniciar contador</span></button>
+        </div>
+    </div>
+</body>
+</html>
