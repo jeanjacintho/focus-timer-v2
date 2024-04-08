@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: hsl(184, 5%, 7%);
+    --text-color: hsl(240, 40%, 98%);
+    --primary-color: hsl(20, 90%, 48%);
+    --controls-bg-color: hsl(194, 0%, 14%);
+    --music-bg-color: hsl(0, 0%, 15%);
+    --button-secondary: hsl(240, 40%, 98%);
+
+    font-size: clamp(40%, 1% + 2vh, 62.5%);
+}
+
+html.light {
+    --bg-color: hsl(240, 40%, 98%);
+    --text-color: hsl(184, 5%, 7%);
+    --music-bg-color: hsl(0, 0%, 85%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+    display: none;
+}
+
+#toggle-mode {
+    position: absolute;
+    right: 3.2rem;
+    top: 3.2rem;
+    font-size: 3.2rem;
+    line-height: 0;
+    color: var(--text-color);
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+
+#app {
+    display: flex;
+}
+
+.timer-screen {
+    display: grid;
+    justify-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+#timer {
+    font-size: 9.6rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#controls {
+    margin-top: 1.6rem;
+    padding: 2.2rem 4rem;
+    gap: 1.6rem;
+    background-color: var(--controls-bg-color);
+    border-radius: 999rem;
+}
+
+#controls button {
+    font-size: 5.2rem;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 6.4rem;
+}
+
+.secondary {
+    color: var(--button-secondary);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-x ,
+html:not(.running) .ph-pause-circle,
+html:not(.music-on) .ph-speaker-high   {
+    display: none;
+}
+
+#musics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
+    gap: 1rem;
+    margin: auto;
+    margin-inline-start: 3rem;
+}
+
+#musics button {
+    height: 10rem;
+    width: 10rem;
+    background-color: var(--music-bg-color);
+    border-radius: 2.5rem;
+    color: var(--text-color);
+}
+
+#musics button.selected {
+    background-color: var(--primary-color);
+}
